@@ -38,8 +38,8 @@ To write a Java program to verify if a string reads the same forward and backwar
  ```
 
 Program to implement a Strings and Math Function using Java
-Developed by: Harish G
-RegisterNumber:  212222243001
+Developed by: Ganesh R
+RegisterNumber:  212222240029
 
 ```
 
