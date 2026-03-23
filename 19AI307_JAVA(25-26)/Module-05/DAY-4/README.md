@@ -1,96 +1,62 @@
-# Ex.No:5(E) MULTITHREADING -SYNCHRONIZATION
+# Ex.No:5(D) THREAD PRIORITY
 
 ## QUESTION:
-Maintain two int variables a and b, read their initial values from user. Use synchronized block to swap them and print swapped values.
-
-Input:
-
-Two lines: a and b values
-
-Output:
-
-a = <swapped_a>
-
-b = <swapped_b>
+Write a java program for set the priority and name of the current thread.Consider two threads t1 and t2
 
 ## AIM:
-To demonstrate the use of a synchronized block for safely swapping two integer variables.
+To write a Java program that demonstrates thread priority by creating two threads, assigning names and priorities to them, and displaying thread execution.
 
 ## ALGORITHM :
-1.	Read two integer values a and b from the user.
-2.	Create a lock object for synchronization.
-3.	Use a synchronized(lock) block to perform the swapping.
-4.	Swap values using a temporary variable.
-5.	Print the swapped values of a and b.
-
-
-
+1.	Start the program.
+2.	Import the necessary package 'java.util'
+3.	Create a class that extends Thread.
+4. Override the run() method to print the current thread name and priority.
+5. Create two thread objects t1 and t2.
+6. Set names and priorities for each thread using setName() and setPriority().
+7. Start both threads.
+8. Display messages showing thread execution order.
+9. End the program.
 
 
 ## PROGRAM:
  ```
 /*
-Program to implement a Synchronization concept using Java
+Program to implement a Thread Priority Concept using Java
 Developed by: Ganesh R
-Register Number: 212222240029
+RegisterNumber: 212222240029
 */
 ```
 
 ## SOURCE CODE:
-```java
-import java.util.Scanner;
+```
+import java.util.*;
 
-public class SwapSynchronized {
-    private int a;
-    private int b;
-
-    public SwapSynchronized(int a, int b) {
-        this.a = a;
-        this.b = b;
-    }
-
-    public void swap() {
-        Object lock = new Object(); 
-        synchronized (lock) {
-            int temp = a;
-            a = b;
-            b = temp;
-        }
-    }
-
-    public void printValues() {
-        System.out.println("a = " + a);
-        System.out.println("b = " + b);
-    }
-
+public class ThreadPriorityExample {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        int a = Integer.parseInt(sc.nextLine());
-        int b = Integer.parseInt(sc.nextLine());
-
-        SwapSynchronized swapper = new SwapSynchronized(a, b);
-        swapper.swap();
-        swapper.printValues();
+        String name1 = sc.nextLine();
+        String name2 = sc.nextLine();
+        Thread t1 = new Thread();
+        Thread t2 = new Thread();
+        t1.setName(name1);
+        t2.setName(name2);
+        t1.setPriority(4);
+        t2.setPriority(2);
+        System.out.println(t1);
+        System.out.println(t2);
 
         sc.close();
     }
 }
 ```
 
-
-
-
-
-
 ## OUTPUT:
-<img width="1315" height="352" alt="image" src="https://github.com/user-attachments/assets/4ac75d2b-e703-4ae2-9edb-c22bc5dc3b45" />
+
+![java54](https://github.com/ABINAYA-27-76/19AI307_ODD-25-26-/blob/7d952630fc35928069eb8db8971d42aa9400df96/19AI307_JAVA(25-26)/Module-05/DAY-4/java54.png)
 
 
 ## RESULT:
-The program successfully swaps the two integers inside a synchronized block and displays the swapped values safely.
-
-
+Thus, the Java program that demonstrates thread naming and thread priority was successfully executed.
 
 
 
